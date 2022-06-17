@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ConnectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +18,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/test',[Controller::class,'testConnection']);
+Route::get('/test','App\Http\Controllers\Controller@testConnection');
+Route::post('/get-all-question','App\Http\Controllers\QuestionController@getAllQuestions');
+Route::post('/get-random-question','App\Http\Controllers\QuestionController@getRandomQuestion');
+
+
+
